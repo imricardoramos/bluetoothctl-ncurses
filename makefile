@@ -4,7 +4,7 @@ HEADER =
 OUT = bluetoothctl-ncurses
 CC = gcc
 FLAGS = -g -c -Wall
-LFLAGS = -lmenu -lncurses
+LFLAGS = -lmenu `pkg-config --libs ncurses`
 
 all: $(OBJS)
 	$(CC) -g $(OBJS) -o $(OUT) $(LFLAGS)
